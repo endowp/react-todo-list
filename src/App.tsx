@@ -1,7 +1,8 @@
 import React, { useState } from "react";
 import { AddTodoForm } from "./AddTodoForm";
 import { TodoList } from "./TodoList";
-// import './App.css';
+
+import Grid from "@mui/material/Grid";
 
 const innitialTodos: Todo[] = [
   {
@@ -36,10 +37,10 @@ function App() {
   };
 
   return (
-    <>
+    <Grid container spacing={0} direction="column" alignItems="center">
       <TodoList todos={todos} toggleTodo={toggleTodo} />
       <AddTodoForm addTodo={addTodo} />
-    </>
+    </Grid>
   );
 }
 

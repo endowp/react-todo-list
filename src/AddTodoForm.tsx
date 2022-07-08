@@ -6,7 +6,6 @@ interface Props {
   addTodo: AddTodo;
 }
 
-
 export const AddTodoForm: React.FC<Props> = ({ addTodo }) => {
   const [text, setText] = useState("");
 
@@ -23,7 +22,7 @@ export const AddTodoForm: React.FC<Props> = ({ addTodo }) => {
       />
       <br />
       <Button
-        sx={{ mt: 2}}
+        sx={{ mt: 2, mb: 4 }}
         variant="outlined"
         type="submit"
         onClick={(e) => {
