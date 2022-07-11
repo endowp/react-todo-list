@@ -1,7 +1,6 @@
 import React, { useState } from "react";
 import { AddTodoForm } from "./AddTodoForm";
 import { TodoList } from "./TodoList";
-
 import Grid from "@mui/material/Grid";
 
 const innitialTodos: Todo[] = [

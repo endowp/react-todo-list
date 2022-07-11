@@ -1,0 +1,18 @@
+body {
+  background-color: rgb(202, 229, 255) !important;
+}
+
+.add-todo-form {
+  display: contents;
+}
+
+.add-todo-input,
+.add-todo-button {
+  background-color: rgb(255, 255, 255) !important;
+}
+
+.todo-item {
+  display: flex;
+  align-items: center;
+  flex-wrap: wrap;
+}

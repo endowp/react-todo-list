@@ -5,6 +5,8 @@ import CardContent from "@mui/material/CardContent/CardContent";
 import Checkbox from "@mui/material/Checkbox/Checkbox";
 import FormControlLabel from "@mui/material/FormControlLabel/FormControlLabel";
 import Typography from "@mui/material/Typography/Typography";
+import DeleteIcon from "@mui/icons-material/DeleteForever";
+import "./style.css";
 
 interface Props {
   todo: Todo;
@@ -19,8 +21,8 @@ export const TodoListItem: React.FC<Props> = ({ todo, toggleTodo }) => {
           toggleTodo(todo);
         }}
       >
-        <CardContent>
-          <Typography variant="body1" gutterBottom>
+        <CardContent className="todo-item">
+          <Typography variant="body1">
             <FormControlLabel
               control={<Checkbox />}
               checked={todo.complete}
@@ -30,6 +32,7 @@ export const TodoListItem: React.FC<Props> = ({ todo, toggleTodo }) => {
               }}
             />
           </Typography>
+          <DeleteIcon />
         </CardContent>
       </CardActionArea>
     </Card>
