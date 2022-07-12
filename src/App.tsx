@@ -5,12 +5,14 @@ import Grid from "@mui/material/Grid";
 
 const innitialTodos: Todo[] = [
   {
-    text: "Walk the dog",
-    complete: false,
+    text: "eat breakfast",
+    complete: true,
+    delete: false,
   },
   {
-    text: "Write app",
-    complete: true,
+    text: "write app",
+    complete: false,
+    delete: false,
   },
 ];
 
@@ -31,7 +33,7 @@ function App() {
   };
 
   const addTodo: AddTodo = (text: string) => {
-    const newTodo = { text, complete: false };
+    const newTodo = { text, complete: false, delete: false };
     setTodos([...todos, newTodo]);
   };
 

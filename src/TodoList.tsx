@@ -12,8 +12,12 @@ interface Props {
 export const TodoList: React.FC<Props> = ({ todos, toggleTodo }) => {
   return (
     <div>
-      <Typography sx={{ mt: 4, mb: 2 }} variant="h3" component="div">
-        Todo List
+      <Typography
+        sx={{ mt: 4, mb: 3 }}
+        variant="h3"
+        className="todo-title"
+      >
+        TO DO LIST
       </Typography>
       <Grid>
         <List style={{ overflow: "auto" }}>

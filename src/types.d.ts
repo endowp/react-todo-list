@@ -1,4 +1,5 @@
 interface Todo {
+    delete: boolean;
     text: string;
     complete: boolean;
   }

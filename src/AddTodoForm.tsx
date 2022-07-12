@@ -14,7 +14,7 @@ export const AddTodoForm: React.FC<Props> = ({ addTodo }) => {
     <form className="add-todo-form">
       <TextField
         id="outlined-basic"
-        label="Todo"
+        label="To do"
         type="text"
         value={text}
         onChange={(e) => {
@@ -25,12 +25,14 @@ export const AddTodoForm: React.FC<Props> = ({ addTodo }) => {
       <br />
       <Button
         sx={{ mt: 2, mb: 4 }}
-        variant="outlined"
+        variant="contained"
         type="submit"
         onClick={(e) => {
           e.preventDefault();
-          addTodo(text);
-          setText("");
+          if (text !== "") {
+            addTodo(text);
+            setText("");
+          }
         }}
         className="add-todo-button"
       >

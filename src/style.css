@@ -1,18 +1,54 @@
+@import url("https://fonts.googleapis.com/css?family=Montserrat:900i&display=swap");
+
 body {
   background-color: rgb(202, 229, 255) !important;
+}
+
+.todo-title {
+  font-family: "Montserrat" !important;
+  font-size: xxx-large !important;
+  letter-spacing: 0.1em;
+  -webkit-text-fill-color: transparent;
+  -webkit-text-stroke-width: 1.5px;
+  -webkit-text-stroke-color: white;
+  text-shadow: 5px 7px #4400ff, 10px 10px #000000;
+  width: 332px !important;
+  padding-left: 4%;
 }
 
 .add-todo-form {
   display: contents;
 }
 
-.add-todo-input,
-.add-todo-button {
+.add-todo-input {
   background-color: rgb(255, 255, 255) !important;
+  width: 332px;
+}
+
+.add-todo-button {
+  font-size: large !important;
+  font-family: "Montserrat" !important;
+  margin-top: 0 !important;
+  width: 332px;
 }
 
 .todo-item {
   display: flex;
   align-items: center;
-  flex-wrap: wrap;
+  justify-content: space-between;
+  width: 300px;
+  overflow-wrap: break-word;
+  transition: 1s !important;
+}
+
+.complete-todo-item {
+  text-decoration: line-through;
+  color: rgb(58, 74, 117) !important;
+  background-color: rgb(189, 203, 228) !important;
+  transition: 1s !important;
+}
+
+.not-complete-todo-item {
+  background-color: rgb(255, 255, 255) !important;
+  transition: 1s !important;
 }
