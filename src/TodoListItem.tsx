@@ -19,9 +19,12 @@ export const TodoListItem: React.FC<Props> = ({ todo, toggleTodo }) => {
     <Card
       sx={{ mb: 2 }}
       className={`${
-        todo.complete ? "complete-todo-item" : "not-complete-todo-item"
+        todo.delete
+          ? "deleted-todo-item"
+          : todo.complete
+          ? "completed-todo-item"
+          : "not-completed-todo-item"
       }`}
-      style={{ display: todo.delete ? "none" : undefined }}
     >
       <CardActionArea
         onMouseUp={() => {
