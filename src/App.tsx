@@ -1,23 +1,34 @@
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import { AddTodoForm } from "./AddTodoForm";
 import { TodoList } from "./TodoList";
 import Grid from "@mui/material/Grid";
 
+//localStorage.clear()
+
 const innitialTodos: Todo[] = [
   {
     text: "eat breakfast",
-    complete: true,
+    complete: false,
     delete: false,
   },
   {
     text: "write app",
-    complete: false,
+    complete: true,
     delete: false,
   },
 ];
 
 function App() {
   const [todos, setTodos] = useState(innitialTodos);
+
+  console.log("todos", todos);
+  console.log("localStorage", localStorage);
+
+  useEffect(() => {
+    if (localStorage.getItem("todos")) {
+      setTodos(JSON.parse(localStorage.getItem("todos") || ""));
+    }
+  }, []);
 
   const toggleTodo = (selectedTodo: Todo) => {
     const newTodos = todos.map((todo) => {
@@ -30,11 +41,13 @@ function App() {
       return todo;
     });
     setTodos(newTodos);
+    localStorage.setItem("todos", JSON.stringify(newTodos));
   };
 
   const addTodo: AddTodo = (text: string) => {
     const newTodo = { text, complete: false, delete: false };
     setTodos([...todos, newTodo]);
+    localStorage.setItem("todos", JSON.stringify([...todos, newTodo]));
   };
 
   return (

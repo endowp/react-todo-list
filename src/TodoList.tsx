@@ -11,7 +11,7 @@ interface Props {
 
 export const TodoList: React.FC<Props> = ({ todos, toggleTodo }) => {
   return (
-    <div>
+    <>
       <Typography
         sx={{ mt: 4, mb: 3 }}
         variant="h3"
@@ -26,6 +26,6 @@ export const TodoList: React.FC<Props> = ({ todos, toggleTodo }) => {
           ))}
         </List>
       </Grid>
-    </div>
+    </>
   );
 };
